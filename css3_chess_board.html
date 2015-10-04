@@ -1,0 +1,154 @@
+<!-- --------------------------------------------------------------------------
+Name         : CSS3 Chess board
+File         : css3_chess_board.html
+Description  : Implementation of a chess board in HTML/CSS3 using the SCSS
+               notation of SASS.
+Objectives   : Provide a chess board with HTML divs and with unic ids for each 
+               squares for allowing easy JavaScript manipulation and 
+               coordinates written on each sides for the comfort of the user.
+Usage        : Read directly in browser the HTML file.
+               Compile the .scss file with one of the following commands:
+               sass .\css3_chess_board.scss .\css3_chess_board.css
+               sass --watch .\css3_chess_board.scss:.\css3_chess_board.css
+Compatibility: caniuse.com, allmost all browsers.
+Rights       : Copyright (c) 2015 vincentperrin.com - MIT License             
+-------------------------------------------------------------------------- -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS3 Chess board</title>
+    <meta name="description" content="Chess board">
+    <meta name="author" content="vincentperrin.com">
+    
+    <!-- Mobile-friendly viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css3_chess_board.css?v=1.0">
+</head>
+<body>
+    The chess board:
+    <div id="board-side">
+        <div class="coord"></div>
+        <div class="coord">A</div>
+        <div class="coord">B</div>
+        <div class="coord">C</div>
+        <div class="coord">E</div>
+        <div class="coord">E</div>
+        <div class="coord">F</div>
+        <div class="coord">G</div>
+        <div class="coord">H</div>
+        <div class="coord"></div>
+        <div class="coord clear">8</div>
+        <div class="coord right">8</div>
+        <div class="coord clear">7</div>
+        <div class="coord right">7</div>
+        <div class="coord clear">6</div>
+        <div class="coord right">6</div>
+        <div class="coord clear">5</div>
+        <div class="coord right">5</div>
+        <div class="coord clear">4</div>
+        <div class="coord right">4</div>
+        <div class="coord clear">3</div>
+        <div class="coord right">3</div>
+        <div class="coord clear">2</div>
+        <div class="coord right">2</div>
+        <div class="coord clear">1</div>
+        <div class="coord right">1</div>
+        <div class="coord clear"></div>
+        <div class="coord">A</div>
+        <div class="coord">B</div>
+        <div class="coord">C</div>
+        <div class="coord">E</div>
+        <div class="coord">E</div>
+        <div class="coord">F</div>
+        <div class="coord">G</div>
+        <div class="coord">H</div>
+        <div class="coord"></div>
+        <div id="board">
+            <div id="row-8">
+                <div id="row-8-col-a"></div>
+                <div id="row-8-col-b"></div>
+                <div id="row-8-col-c"></div>
+                <div id="row-8-col-d"></div>
+                <div id="row-8-col-e"></div>
+                <div id="row-8-col-f"></div>
+                <div id="row-8-col-g"></div>
+                <div id="row-8-col-h"></div>
+            </div>
+            <div id="row-7">
+                <div id="row-7-col-a"></div>
+                <div id="row-7-col-b"></div>
+                <div id="row-7-col-c"></div>
+                <div id="row-7-col-d"></div>
+                <div id="row-7-col-e"></div>
+                <div id="row-7-col-f"></div>
+                <div id="row-7-col-g"></div>
+                <div id="row-7-col-h"></div>
+            </div>
+            <div id="row-6">
+                <div id="row-6-col-a"></div>
+                <div id="row-6-col-b"></div>
+                <div id="row-6-col-c"></div>
+                <div id="row-6-col-d"></div>
+                <div id="row-6-col-e"></div>
+                <div id="row-6-col-f"></div>
+                <div id="row-6-col-g"></div>
+                <div id="row-6-col-h"></div>
+            </div>
+            <div id="row-5">
+                <div id="row-5-col-a"></div>
+                <div id="row-5-col-b"></div>
+                <div id="row-5-col-c"></div>
+                <div id="row-5-col-d"></div>
+                <div id="row-5-col-e"></div>
+                <div id="row-5-col-f"></div>
+                <div id="row-5-col-g"></div>
+                <div id="row-5-col-h"></div>
+            </div>
+            <div id="row-4">
+                <div id="row-4-col-a"></div>
+                <div id="row-4-col-b"></div>
+                <div id="row-4-col-c"></div>
+                <div id="row-4-col-d"></div>
+                <div id="row-4-col-e"></div>
+                <div id="row-4-col-f"></div>
+                <div id="row-4-col-g"></div>
+                <div id="row-4-col-h"></div>
+            </div>
+            <div id="row-3">
+                <div id="row-3-col-a"></div>
+                <div id="row-3-col-b"></div>
+                <div id="row-3-col-c"></div>
+                <div id="row-3-col-d"></div>
+                <div id="row-3-col-e"></div>
+                <div id="row-3-col-f"></div>
+                <div id="row-3-col-g"></div>
+                <div id="row-3-col-h"></div>
+            </div>
+            <div id="row-2">
+                <div id="row-2-col-a"></div>
+                <div id="row-2-col-b"></div>
+                <div id="row-2-col-c"></div>
+                <div id="row-2-col-d"></div>
+                <div id="row-2-col-e"></div>
+                <div id="row-2-col-f"></div>
+                <div id="row-2-col-g"></div>
+                <div id="row-2-col-h"></div>
+            </div>
+            <div id="row-1">
+                <div id="row-1-col-a"></div>
+                <div id="row-1-col-b"></div>
+                <div id="row-1-col-c"></div>
+                <div id="row-1-col-d"></div>
+                <div id="row-1-col-e"></div>
+                <div id="row-1-col-f"></div>
+                <div id="row-1-col-g"></div>
+                <div id="row-1-col-h"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
