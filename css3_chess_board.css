@@ -1,0 +1,55 @@
+/*******************************************************************************
+Name         : CSS3 Chess board
+File         : css3_chess_board.scss
+Description  : Implementation of a chess board in HTML/CSS3 using the SCSS
+               notation of SASS.
+Objectives   : Provide a chess board with HTML divs and with unic ids for each 
+               squares for allowing easy JavaScript manipulation and 
+               coordinates written on each sides for the comfort of the user.
+Usage        : Read directly in browser the HTML file.
+               Compile the .scss file with one of the following commands:
+               sass .\css3_chess_board.scss .\css3_chess_board.css
+               sass --watch .\css3_chess_board.scss:.\css3_chess_board.css
+Compatibility: caniuse.com, allmost all browsers.
+Rights       : Copyright (c) 2015 vincentperrin.com - MIT License                      
+*******************************************************************************/
+#board-side {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black; }
+  #board-side div.coord {
+    width: 40px;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px; }
+    #board-side div.coord.right {
+      float: right; }
+
+/* the clear is necessary to make div coords to go to a new line */
+.clear {
+  clear: both; }
+
+#board {
+  width: 320px;
+  height: 320px;
+  border: 1px solid black;
+  position: absolute;
+  margin: 40px; }
+  #board div.row {
+    width: 320px;
+    height: 40px;
+    float: left; }
+  #board div div {
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+    float: left; }
+  #board div:nth-child(2n+1) div:nth-child(2n) {
+    background-color: black; }
+  #board div:nth-child(2n) div:nth-child(2n+1) {
+    background-color: black; }
+
+/*# sourceMappingURL=css3_chess_board.css.map */
