@@ -1,0 +1,78 @@
+/*******************************************************************************
+Name         : CSS3 Chess board
+File         : css3_chess_board.scss
+Description  : Implementation of a chess board in HTML/CSS3 using the SCSS
+               notation of SASS.
+Objectives   : Provide a chess board with HTML divs and with unic ids for each 
+               squares for allowing easy JavaScript manipulation and 
+               coordinates written on each sides for the comfort of the user.
+Usage        : Read directly in browser the HTML file.
+               Compile the .scss file with one of the following commands:
+               sass .\css3_chess_board.scss .\css3_chess_board.css
+               sass --watch .\css3_chess_board.scss:.\css3_chess_board.css
+Compatibility: caniuse.com, allmost all browsers.
+Rights       : Copyright (c) 2015 vincentperrin.com - MIT License                      
+*******************************************************************************/
+ 
+$piece-size: 40px;
+
+#board-side  {
+    width: 10 * $piece-size;
+    height: 10 * $piece-size;
+    border: 1px solid black;
+
+    div.coord {
+        width: $piece-size;
+        height: $piece-size;
+        float: left;
+        text-align: center;
+        line-height:  $piece-size;
+
+        &.right {
+            float: right;
+        }
+    }
+}
+
+/* the clear is necessary to make div coords to go to a new line */
+.clear {
+    clear: both;
+}
+
+#board {
+    width: 8 * $piece-size;
+    height: 8 * $piece-size;
+    border: 1px solid black;
+    position: absolute;
+    margin: 40px;
+
+    div.row {
+        width: 8 * $piece-size;
+        height: $piece-size;
+        float: left;
+    }
+
+    div {
+        div {
+            padding: 0;
+            margin: 0;
+            width: $piece-size;
+            height: $piece-size;
+            display: block;
+            float: left;
+        }
+    }
+
+    div:nth-child(2n+1) {
+        div:nth-child(2n) {
+            background-color: black; 
+        }
+    }
+
+    div:nth-child(2n) {
+        div:nth-child(2n+1) {
+            background-color: black; 
+        }
+    }
+}
+  
